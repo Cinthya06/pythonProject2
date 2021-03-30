@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Project\FinalResult.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Project\ReadingFiles.py">
           <value>
             <Attribute>
@@ -10,7 +17,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Project\copyOfFinal.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Project\mergedFiles.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Project\newCode.py">
           <value>
             <Attribute>
               <option name="separator" value="," />

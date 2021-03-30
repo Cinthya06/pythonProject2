@@ -23,8 +23,8 @@ print(list_of_files)
 
 pd.set_option('max_columns', 11)  # shows 11 cols
 # Read CSV Files into Data Frames
-input1 = pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_Input1_v2.4.5_02.12.csv")
-input2 = pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_input2_v2.6.4_03.20.csv")
+input1=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/Input1.csv") #files to read
+input2=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/Input2.csv")
 #
 # input1 = pd.read_csv(oldest_file)
 # input2 = pd.read_csv(latest_file)
@@ -67,20 +67,18 @@ for row in uniqueValues.iterrows():  # iterating through each row
         allDF.loc[(allDF.Index) == index, "Status"] = "Fixed"
         allDF.loc[(allDF.Index) == index, "Date_Found"]=today
 
-        allDF.loc[(allDF.Index) != source, "Status"] = "New"
-
-
+        # allDF.loc[(allDF.Index) != source, "Status"] = "New"
 
 allDF.loc[(allDF.Status) == '', "Status"] = "New"
-# allDF.loc[(allDF.Date_Fixed).isnull(), "Date_Fixed"] = "N/A"  # if values are NaN assign it to N/A
-# allDF.loc[(allDF.Date_Found).isnull(), "Date_Found"] = "N/A"
+allDF.loc[(allDF.Date_Fixed).isnull(), "Date_Fixed"] = "N/A"  # if values are NaN assign it to N/A
+allDF.loc[(allDF.Date_Found).isnull(), "Date_Found"] = "N/A"
 
-# FinalResult = allDF.drop_duplicates(  # droping duplicates from both files just printing one from each
-#     subset=["Category", "Guidelines", "Priority", "Count", "Line", "Description", "Detail", "Help", "URL", "Target URL",
-#             "Reference", "Status", "Date_Found", "Date_Fixed"])
-#
-# print(FinalResult)
-print(allDF.to_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/NIH_Reports/SortSite Scan_LatestMergedRecord_v1.0.0_00.00.csv"))
+FinalResult = allDF.drop_duplicates(  # droping duplicates from both files just printing one from each
+    subset=["Category", "Guidelines", "Priority", "Count", "Line", "Description", "Detail", "Help", "URL", "Target URL",
+            "Reference", "Status", "Date_Found", "Date_Fixed"])
+
+print(FinalResult)
+# print(allDF.to_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/NIH_Reports/SortSite Scan_LatestMergedRecord_v1.0.0_00.00.csv"))
 
 
 

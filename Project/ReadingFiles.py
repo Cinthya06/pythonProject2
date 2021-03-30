@@ -11,8 +11,7 @@ list_of_files=glob.glob(os.path.join(rscPath+'/*.csv'))
 print("-----------------------------------------------------")
 
 pd.set_option('max_columns', 11)  #shows 11 cols
-# Read CSV Files into Data Frames
-rscPath="C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records"
+
 #Getting the list of files from SortSite records
 scans=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/Files_Scanned/ListOfScans.csv")
 list_of_files=glob.glob(os.path.join(rscPath+'/*.csv'))
@@ -80,7 +79,7 @@ for row in uniqueValues.iterrows():
     source = row[1]["Source"]
     index = row[1]["Index"]
     if source==1:#setting conditions
-        allDF.loc[(allDF.Index)==index, "Status"]="New"
+        allDF.loc[(allDF.Index)==index, "Status"]="Open"
         allDF.loc[(allDF.Index)==index, "Date_Found"]=today  #from the latest file added in this case input2
 
     if source==2:
@@ -88,7 +87,7 @@ for row in uniqueValues.iterrows():
         allDF.loc[(allDF.Index)==index, "Date_Fixed"]=today #todays date
 
 
-allDF.loc[(allDF.Status)=='', "Status"]="Open"
+allDF.loc[(allDF.Status)=='', "Status"]="New"
 
 allDF.loc[(allDF.Date_Fixed).isnull(), "Date_Fixed"] = "N/A" #if values are NaN assign it to N/A
 allDF.loc[(allDF.Date_Found).isnull(), "Date_Found"] = today
@@ -98,8 +97,8 @@ FinalResult=allDF.drop_duplicates(#droping duplicates from both files just print
     subset=["Category", "Guidelines", "Priority", "Count", "Line", "Description", "Detail", "Help", "URL", "Target URL",
             "Reference","Status","Date_Found","Date_Fixed"])
 
-print(FinalResult)
-print(FinalResult.to_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/NIH_Reports/SortSite Scan_LatestMergedRecord_v1.0.0_00.00.csv"))
+# print(FinalResult)
+# print(FinalResult.to_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/NIH_Reports/SortSite Scan_LatestMergedRecord_v1.0.0_00.00.csv"))
 
 
 
