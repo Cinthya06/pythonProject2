@@ -15,7 +15,7 @@ import pytz
 # print(latest_file)
 pd.set_option('max_columns', 11)  #shows 11 cols
 # Read CSV Files into Data Frames
-input1 = pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_AMIS_v2.6.1_03.19.csv")
+input1 = pd.read_csv("/Resources/SortSite Scan_AMIS_v2.7.1_03.22.csv")
 input2 = pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_FYPS_v7.0_3.22.csv")
 # input1=pd.read_csv(oldest_file)
 # input2=pd.read_csv(latest_file)

@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\Project\AutomationAll.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Project\FinalResult.py">
           <value>
             <Attribute>
@@ -11,6 +18,20 @@
           </value>
         </entry>
         <entry key="\Project\ReadingFiles.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Project\SScanAutomation.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Project\automationall2.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -46,6 +67,13 @@
           </value>
         </entry>
         <entry key="\Resources\NIH_Reports\newRecord.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Resources\SortSite_Records\SortSite Scan_Input1_v2.4.5_02.12.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -7,30 +7,32 @@ import numpy as np
 
 #getting the values form latest and oldest files
 rscPath="C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/"
+scans=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/Files_Scanned/ListOfScans.csv")
+input1=pd.read_csv("/Resources/SortSite Scan_FYPS_v7.0_03.22.csv")
+input2 = pd.read_csv("/Resources/SortSite Scan_AMIS_v2.7.1_03.22.csv")
 list_of_files=glob.glob(os.path.join(rscPath+'/*.csv'))
+NIH_Rportpth="C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/NIH_Reports"
 print("-----------------------------------------------------")
 
 pd.set_option('max_columns', 11)  #shows 11 cols
 
 #Getting the list of files from SortSite records
-scans=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/Files_Scanned/ListOfScans.csv")
 list_of_files=glob.glob(os.path.join(rscPath+'/*.csv'))
-
 
 # print(list_of_files)
 
+
+
+
 #names of all files on folder /SortSite_Records
+
+
+#Starting func
 entries = Path(rscPath)
-
-newColumns=['Name','Version','Date']
-# scans = pd.concat([scans,pd.DataFrame(columns =[ newColumns])]).dropna()
-
 list_ofFiName=[]
 list_files=[]
 dirOfCurrentFile=""
 for entry in entries.iterdir():#iterating over the directory
-    # print(entry.name)  #getting the name of each file on folder
-
     values=entry.name.split("_")
     name = values[1]
     version=values[2]
@@ -38,17 +40,31 @@ for entry in entries.iterdir():#iterating over the directory
     list_ofFiName.append(entry.name)
     list_files.append([name,version,date])
 
-    if list_files is not scans:
-        scans=pd.DataFrame(list_files)
 
-latest_File_Added=max(list_of_files, key=os.path.getctime)
-print("Latest file added: "+latest_File_Added)
+
+entriesOnNiH_Report=Path(NIH_Rportpth)
+for entry in entriesOnNiH_Report.iterdir():
+    values = entry.name
+    name = values[1]
+    version=values[2]
+    if list_files is not entriesOnNiH_Report:
+
+
+
+        print()
+
+#     if list_files is not scans:
+#         scans=pd.DataFrame(list_files)
+#
+# latest_File_Added=max(list_of_files, key=os.path.getctime)
+
+#ending funct
+
+
+# print("Latest file added: "+latest_File_Added)
 
 
 # input1 = pd.read_csv(latest_File_Added)
-input1=pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_FYPS_v7.0_03.22.csv")
-input2 = pd.read_csv("C:/Users/cinthyavelaochaga/PycharmProjects/pythonProject/Resources/SortSite_Records/SortSite Scan_AMIS_v2.6.1_03.19.csv")
-
 # print(list_ofFiName)
 # with os.scandir(rscPath) as it:
 #     for entry in it:
