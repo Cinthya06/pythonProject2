@@ -135,7 +135,7 @@ for entry in entriesSSR.iterdir():#iterating over the directory SSr
                 input2['Date_Found'] = datessr
                 input2['Date_Fixed'] = "N/A"
 
-                # print(input2.to_csv(NIHReportspth + uniquepdNames))
+               print(input2.to_csv(NIHReportspth + namessr))
 
         # columnSeries=uniquepd[column]
         # namesinUnipd=columnSeries.values
